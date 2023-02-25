@@ -30,20 +30,19 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
           PMA_PASSWORD: root
         ports:
           - "8080:80"
-
     wordpress:
-    depends_on: - db
-    image: wordpress:latest
-    restart: always # Restart line controls the restart mode, meaning if the container stops running for any reason, it will restart the process immediately.
-    ports: - "8000:80" # The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: http://localhost:8000
-    environment:
-    WORDPRESS_DB_HOST: db:3306
-    WORDPRESS_DB_USER: paulonova
-    WORDPRESS_DB_PASSWORD: paulonova
-    WORDPRESS_DB_NAME: MyWordPressDatabaseName # Similar to MySQL image variables, the last four lines define the main variables needed for the WordPress container to work properly with the MySQL container.
-    volumes: ["./:/var/www/html"]
-    volumes:
-    mysql: {}
+      depends_on: - db
+      image: wordpress:latest
+      restart: always # Restart line controls the restart mode, meaning if the container stops running for any reason, it will restart the process immediately.
+      ports: - "8000:80" # The previous line defines the port that the WordPress container will use. After successful installation, the full path will look like this: http://localhost:8000
+      environment:
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_USER: paulonova
+        WORDPRESS_DB_PASSWORD: paulonova
+        WORDPRESS_DB_NAME: MyWordPressDatabaseName # Similar to MySQL image variables, the last four lines define the main variables needed for the WordPress container to work properly with the MySQL container.
+      volumes: ["./:/var/www/html"]
+      volumes:
+        mysql: {}
 
 </code>
 
