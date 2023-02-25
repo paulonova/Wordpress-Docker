@@ -6,7 +6,7 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
 
 1 - create a new docker-compose.yml file, and paste the contents below:
 
-<samp>
+<code>
   version: "3"
     # Defines which compose version to use
     services:
@@ -45,7 +45,7 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
     volumes:
     mysql: {}
 
-</samp>
+</code>
 
 2 - Run docker compose up -d
 
