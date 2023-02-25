@@ -49,3 +49,5 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
 2 - Run docker compose up -d
 
 - It will install the latest wordpress and all docker dependencies include Phpmyadmin as database
+
+3 - PHP myadmin: Once done, open http://localhost:8080/, and you’ll be able to see the phpMyAdmin interface along with your WordPress database.
