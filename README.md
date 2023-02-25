@@ -8,26 +8,26 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
 
 <code>
   version: "3"
-    # Defines which compose version to use
+# Defines which compose version to use
     services:
-      # Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
+# Services line define which Docker images to run. In this case, it will be MySQL server and WordPress image.
       db:
         image: mysql:5.7
-        # image: mysql:5.7 indicates the MySQL database container image from Docker Hub used in this installation.
+# image: mysql:5.7 indicates the MySQL database container image from Docker Hub used in this installation.
         restart: always
         environment:
           MYSQL_ROOT_PASSWORD: MyR00tMySQLPa$$5w0rD
           MYSQL_DATABASE: MyWordPressDatabaseName
           MYSQL_USER: paulonova
           MYSQL_PASSWORD: paulonova
-          # Previous four lines define the main variables needed for the MySQL container to work: database, database username, database user password, and the MySQL root password.
+# Previous four lines define the main variables needed for the MySQL container to work: database, database username, database user password, and the MySQL root password.
       phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         restart: always
         environment:
           PMA_HOST: db
-          PMA_USER: root
-          PMA_PASSWORD: root
+          PMA_USER: paulonova
+          PMA_PASSWORD: paulonova
         ports:
           - "8080:80"
     wordpress:
@@ -45,7 +45,7 @@ Tutorial link: https://www.hostinger.com/tutorials/run-docker-wordpress
         mysql: {}
 
 </code>
-
+</br>
 2 - Run docker compose up -d
 
 - It will install the latest wordpress and all docker dependencies include Phpmyadmin as database

@@ -17,8 +17,8 @@ services:
     restart: always
     environment:
       PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: root
+      PMA_USER: paulonova
+      PMA_PASSWORD: paulonova
     ports:
       - "8080:80"
 
